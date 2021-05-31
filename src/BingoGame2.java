@@ -405,7 +405,6 @@ public class BingoGame2 extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         board = new Board();
         board_copy = new Board(board);
-        board.display();
         Arrays();
         
         

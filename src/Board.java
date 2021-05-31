@@ -139,25 +139,7 @@ public class Board {
         return false;
     }
 
-    public void display() {
-
-        for (int i = 0; i < Board[0].length; i++) {
-            System.out.println();
-            for (int j = 0; j < Board.length; j++){
-            
-                if (Board[j][i] == -1){
-                    System.out.print((j == 0) ? "X" : " X");
-                
-                } else if (Board[j][i] == 0) {
-                    System.out.print((j == 0) ? " " : "  ");
-                } else {
-                    System.out.print(Board[j][i]);
-                }
-                System.out.print(" | ");
-            } 
-        }
-    }
-
+    
     public boolean gameover() {
         
         int p=0;
