@@ -24,12 +24,7 @@ public class Board {
         create();
     }
 
-    Board(Board copia) {
-        for(int i = 0; i < isLineCompleted.length; i++) {
-            isLineCompleted[i] = false; 
-        }
-        copy(copia);
-    }   
+   
 
     private void create() {
 
@@ -51,13 +46,7 @@ public class Board {
         }
     }
 
-    public void copy(Board copy) {
-        for(int i = 0; i < 9; i++) {
-            for(int j = 0; j < 3; j++) {
-                Board[i][j] = copy.getNumber(i, j);
-            }
-        }
-    }
+   
 
     public int getNumber(int linha, int coluna) {
         return Board[linha][coluna];
