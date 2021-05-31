@@ -77,7 +77,7 @@ public class Board {
         }
     }
 
-    public void verificarLinhas() {
+    public boolean verificarLinhas() {
 
         int y=0;            
         for(int h = 0; h < 3; h++){
@@ -91,22 +91,24 @@ public class Board {
 
                     System.out.println("\nLinha completa!");
                     isLineCompleted[h] = true;
+                    return true;
                 } 
             }
             y=0;
         }
+        return false;
     }
 
     public void preencherColuna(int coluna[],int numero){
         
         int espaco = 0;
-        int max = (10*numero)+9;
+        int max = (10*numero)+10;
         int min = 10*numero;
         if (numero==0){
             min=1;
         }
         if(numero==8){
-            max=max+2;
+            max=max+1;
         }
         for (int b = 1; b <= 9; b++) {
             int randomb = randomNumber.nextInt(max-min)+ min ;
@@ -128,6 +130,14 @@ public class Board {
         }
         return true;
     }
+    
+    public boolean numCheck(int coluna, int linha, int n) {
+
+        if (Board[coluna][linha] == n) {
+            return true;
+        }
+        return false;
+    }
 
     public void display() {
 
@@ -148,5 +158,24 @@ public class Board {
         }
     }
 
+    public boolean gameover() {
+        
+        int p=0;
+
+        for (int i = 0; i < Board[0].length; i++){  
+            for (int j = 0; j < Board.length; j++){
+                if (Board[j][i] == -1){
+                    p++;   
+                }
+            }
+        }
+        if(p==15){
+            System.out.println("                            ");
+            System.out.println("Parabéns você ganhou o jogo!");
+            System.out.println("                            ");
+            return true;
+        }
+        return false;
+    }
    
 }
