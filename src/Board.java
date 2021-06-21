@@ -149,4 +149,20 @@ public class Board {
         return false;
     }
    
+    public String[] getAvailableNumber(){
+        int n=0;    
+        String[]result = new String[15];
+
+        for(int h=0;h<9;h++){
+            for(int i=0;i<3;i++){    
+                if(Board[h][i]!= 0){
+                    result[n]= String.valueOf(Board[h][i]);
+                    n++;
+                }
+
+            }    
+        }
+        return result;
+    }
+    
 }
