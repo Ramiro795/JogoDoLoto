@@ -160,9 +160,24 @@ public class Board {
                     n++;
                 }
 
-            }    
+            }
         }
         return result;
     }
+    
+    private boolean pretencerColuna(int coluna , int number){
+        
+        String getValue = new String();
+        int index = (int) number / 10;
+        if(number==90){
+            index--;
+            
+        }
+        if(coluna == index){
+            return true;
+        }
+        return false;
+    }
+    
     
 }

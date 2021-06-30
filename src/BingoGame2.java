@@ -240,7 +240,6 @@ public class BingoGame2 extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.setText("jTextField2");
         jTextField2.setEnabled(false);
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -518,7 +517,29 @@ public class BingoGame2 extends javax.swing.JFrame {
         int max = 91;
         int min = 0;
         
+        String getValue = jTextField1.getText();
+        System.out.print(getValue); 
         
+        
+        String comboValor = (String) jComboBox1.getSelectedItem();
+        
+        String []AvailableNumbers = board.getAvailableNumber();
+        
+        int saotodosdiferentes = 0;
+        
+        for(int i=0;i<15;i++){
+            if(Integer.parseInt(getValue)== Integer.parseInt(AvailableNumbers[i]) ){
+                saotodosdiferentes++;
+            }
+        }
+        
+        if(Integer.parseInt(getValue)/10 == Integer.parseInt(comboValor)/10 && Integer.parseInt(getValue)!= Integer.parseInt(comboValor)&& saotodosdiferentes==0){
+           for(int l=0;l<valores.size();l++){
+               if(valores.get(l).getText()== comboValor){
+                   valores.get(l).setText(getValue);
+               }
+           }
+        }
         
     }//GEN-LAST:event_jTextField2ActionPerformed
 
